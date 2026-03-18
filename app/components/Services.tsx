@@ -55,7 +55,7 @@ export function Services() {
         </div>
       </div>
     </section>
-    <section className="bg-[#111a22] px-4 py-8 sm:px-8">
+    <section className="bg-[#111a22] px-4 py-14 sm:px-8">
         <div className="container mx-auto w-full">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-display text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
