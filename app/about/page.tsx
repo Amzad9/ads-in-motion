@@ -102,7 +102,7 @@ export default function AboutPage() {
               ADS IN MOTION • MOBILE ADVERTISING
             </p>
 
-            <h1 className="font-display mt-5 text-4xl font-black uppercase leading-[0.9] text-[#f6fbfc] drop-shadow-[0_3px_6px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-6xl">
+            <h1 className="font-display mt-5 text-4xl font-bold uppercase leading-[0.9] text-[#f6fbfc] drop-shadow-[0_3px_6px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-6xl">
               About
               <br />
               Ads in Motion
@@ -134,7 +134,7 @@ export default function AboutPage() {
       <section className="bg-[#111a22] px-4 pt-10 sm:px-8 sm:pt-14">
         <div className="container mx-auto w-full">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-3xl font-black leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
               Built for Better Visibility
             </h2>
             <p className="mt-4 text-base leading-7 text-[#c9d4da] sm:text-lg sm:leading-8">
@@ -152,7 +152,7 @@ export default function AboutPage() {
                 <div className="flex items-start gap-4">
                   <div className="mt-1 text-[#9ec2cd]">{card.icon}</div>
                   <div>
-                    <h3 className="font-display text-2xl font-black uppercase leading-tight text-[#f4fbfd]">
+                    <h3 className="font-display text-2xl font-bold uppercase leading-tight text-[#f4fbfd]">
                       {card.title}
                     </h3>
                     <p className="mt-3 text-base leading-7 text-[#c7d2d9]">
@@ -172,7 +172,7 @@ export default function AboutPage() {
         <div className="container mx-auto w-full">
           <div className="grid gap-6 rounded-[22px] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 shadow-[0_18px_44px_rgba(0,0,0,0.35)] lg:grid-cols-12 lg:p-7">
             <div className="lg:col-span-5">
-              <h2 className="font-display text-3xl font-black leading-[0.95] text-[#f0f7f8] sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl">
                 Routes, Events & City Coverage
               </h2>
               <p className="mt-4 text-base leading-8 text-[#c9d4da] sm:text-lg">
@@ -207,7 +207,7 @@ export default function AboutPage() {
       <section className="bg-[#ffffff] px-4 py-10 sm:px-8 sm:py-14">
         <div className="container mx-auto w-full">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-2xl font-black leading-none text-[#111a22] sm:text-3xl lg:text-4xl">
+            <h2 className="font-display text-2xl font-bold leading-none text-[#111a22] sm:text-3xl lg:text-4xl">
               Experience the Difference
             </h2>
             <p className="mt-4 text-base leading-7 text-[#111a22] sm:text-lg sm:leading-8">
@@ -248,7 +248,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-b from-[#0b1118] to-[#070b10] px-4 py-10 sm:px-8 sm:py-14">
         <div className="container mx-auto w-full">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-3xl font-black leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
               Our Campaign Process
             </h2>
             <p className="mt-4 text-base leading-7 text-[#c9d4da] sm:text-lg sm:leading-8">
@@ -288,7 +288,7 @@ export default function AboutPage() {
         <div className="container mx-auto w-full">
           <div className="grid gap-6 rounded-[22px] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 shadow-[0_18px_44px_rgba(0,0,0,0.35)] lg:grid-cols-12 lg:p-8">
             <div className="lg:col-span-7">
-              <h2 className="font-display text-2xl font-black leading-[0.95] text-[#111a22] sm:text-4xl">
+              <h2 className="font-display text-2xl font-bold leading-[0.95] text-[#111a22] sm:text-4xl">
                 Better yet, Call or Message Us
               </h2>
               <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">

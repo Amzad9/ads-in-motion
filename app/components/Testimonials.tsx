@@ -14,7 +14,7 @@ const testimonials = [
     avatar: "/testimonial/test2.png",
   },
   {
-    name: "Robert S.",
+    name: "Lurie H.",
     quote:
       "Peace of mind is everything, and this company delivery a top-totoch security solution.",
     avatar: "/testimonial/test3.png",
@@ -26,7 +26,7 @@ export function Testimonials() {
     <section className="bg-white py-8 dark:bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="rounded-[20px] bg-surface-2 px-5 py-8 shadow-soft ring-1 ring-black/5 sm:px-8 sm:py-10">
-          <h3 className="font-display text-center text-[30px] font-black leading-[1] text-black dark:text-foreground sm:text-[36px] md:text-[40px]">
+          <h3 className="font-display text-center text-[30px] font-bold leading-none text-black dark:text-foreground sm:text-[36px] md:text-[40px]">
             TESTIMONIALS
           </h3>
 

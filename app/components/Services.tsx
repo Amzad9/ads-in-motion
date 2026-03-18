@@ -23,19 +23,22 @@ export function Services() {
     <>
     <section id="services" className="bg-white py-8 dark:bg-background">
       <div className="container mx-auto grid items-center gap-10 px-4 sm:px-6 md:grid-cols-12">
-        <div className="relative col-span-12 md:col-span-7 overflow-hidden rounded-[22px] bg-surface shadow-soft ring-1 ring-black/5">
+        <div
+          className="relative col-span-12 md:col-span-7 overflow-hidden rounded-[22px] bg-surface shadow-soft ring-1 ring-black/5"
+          /* Match the actual image aspect ratio (features.png is 1264x541). */
+          style={{ aspectRatio: "1264 / 541" }}
+        >
           <Image
             src="/features.png"
             alt="Mobile advertising"
-            width={760}
-            height={420}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="h-auto w-full max-w-full"
+            fill
+            sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw"
+            className="object-cover"
           />
         </div>
 
         <div className="col-span-12 md:col-span-5">
-          <h2 className="font-display text-[46px] font-black leading-[0.98] text-brand-teal-900 dark:text-foreground">
+          <h2 className="font-display text-[22px] lg:text-[46px] font-bold leading-[0.98] text-brand-teal-900 dark:text-foreground">
             PREMIUM MOBILE ADVERTISING <br />
             SERVICES
           </h2>
@@ -55,7 +58,7 @@ export function Services() {
     <section className="bg-[#111a22] px-4 py-8 sm:px-8">
         <div className="container mx-auto w-full">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-3xl font-black leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
               Built for Better Visibility
             </h2>
             <p className="mt-4 text-base leading-7 text-[#c9d4da] sm:text-lg sm:leading-8">
@@ -68,12 +71,12 @@ export function Services() {
             {aboutCards.map((card) => (
               <article
                 key={card.title}
-                className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 shadow-[0_16px_34px_rgba(0,0,0,0.35)]"
+                className="rounded-2xl border border-white/10 bg-linear-to-br from-white/10 to-white/5 p-5 shadow-[0_16px_34px_rgba(0,0,0,0.35)]"
               >
                 <div className="flex items-start gap-4">
                   <div className="mt-1 text-[#9ec2cd]">{card.icon}</div>
                   <div>
-                    <h3 className="font-display text-2xl font-black uppercase leading-tight text-[#f4fbfd]">
+                    <h3 className="font-display text-2xl font-bold uppercase leading-tight text-[#f4fbfd]">
                       {card.title}
                     </h3>
                     <p className="mt-3 text-base leading-7 text-[#c7d2d9]">

@@ -42,7 +42,7 @@ export default function PortfolioPage() {
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#d3dbe0] shadow-[0_0_0_1px_rgba(255,255,255,0.04)] sm:text-sm">
               Visual Portfolio
             </p>
-            <h1 className="font-display mt-5 text-5xl font-black uppercase leading-[0.9] text-[#f6fbfc] drop-shadow-[0_3px_6px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
+            <h1 className="font-display mt-5 text-5xl font-bold uppercase leading-[0.9] text-[#f6fbfc] drop-shadow-[0_3px_6px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
               Unleash Your Imagination
               <br />
               With Our Campaign Gallery
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
         <div className="container mx-auto">
           {/* <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <h2 className="font-display text-2xl font-black uppercase tracking-tight text-[#f6fbfc] sm:text-3xl">
+              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-[#f6fbfc] sm:text-3xl">
                 Campaign Preview Slider
               </h2>
               <p className="mt-2 text-sm text-[#c6d3db] sm:text-base">

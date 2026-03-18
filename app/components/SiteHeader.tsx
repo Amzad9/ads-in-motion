@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PrimaryButton } from "./PrimaryButton";
 
 const nav = [
@@ -16,20 +16,36 @@ const nav = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const overflowPrevRef = useRef<{
+    bodyOverflow: string;
+    htmlOverflow: string;
+  } | null>(null);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
-  // Lock body scroll when mobile menu is open (like reference header)
+  // Lock scroll when mobile menu is open.
+  // (Restores previous overflow values to avoid leaving the page stuck.)
   useEffect(() => {
     if (isOpen) {
+      if (!overflowPrevRef.current) {
+        overflowPrevRef.current = {
+          bodyOverflow: document.body.style.overflow,
+          htmlOverflow: document.documentElement.style.overflow,
+        };
+      }
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "hidden";
+      return;
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+
+    // Menu closed: restore previous overflow values.
+    if (overflowPrevRef.current) {
+      document.body.style.overflow = overflowPrevRef.current.bodyOverflow;
+      document.documentElement.style.overflow =
+        overflowPrevRef.current.htmlOverflow;
+      overflowPrevRef.current = null;
+    }
   }, [isOpen]);
 
   return (
@@ -47,7 +63,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop nav (shown on large screens and up) */}
-        <nav className="hidden items-center gap-10 text-[15px] font-extrabold tracking-widest text-brand-teal-900 lg:flex">
+        <nav className="hidden ml-auto items-end gap-10 text-[15px] font-semibold tracking-wide text-brand-teal-900 lg:flex pe-5">
           {nav.map((item) => {
             const isActive =
               item.href === "/"
@@ -81,7 +97,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={toggleMenu}
-          className="inline-flex items-center justify-center rounded-md border border-brand-teal-900/30 bg-white/80 px-3 py-2 text-sm font-bold uppercase tracking-[0.2em] text-brand-teal-900 shadow-sm lg:hidden"
+          className="inline-flex items-center justify-center rounded-md border border-brand-teal-900/30 bg-white/80 px-3 py-2 text-sm font-semibold uppercase tracking-[0.14em] text-brand-teal-900 shadow-sm lg:hidden"
           aria-label="Toggle navigation menu"
         >
           <span className="mr-2 text-xs">Menu</span>
@@ -105,32 +121,27 @@ export function SiteHeader() {
         </button>
       </div>
 
-        {/* Mobile overlay - tap to close (phones + tablets) */}
-      <div
-          className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={closeMenu}
-        aria-hidden="true"
-      />
+        {/* Mobile overlay + drawer (rendered only when open so it can't leave visual gaps) */}
+      {isOpen ? (
+        <>
+          <div
+            className="fixed inset-0 z-60 bg-black/50 backdrop-blur-sm lg:hidden"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
 
-        {/* Mobile / tablet slide-in menu (right-side drawer, above overlay) */}
-      <div
-          className={`fixed top-0 right-0 bottom-0 z-[70] flex h-screen w-full sm:w-[75%] md:w-[60%] max-w-none flex-col bg-white shadow-2xl transition-transform duration-300 ease-out dark:bg-brand-teal-950 lg:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-hidden={!isOpen}
-      >
+          {/* Mobile / tablet slide-in menu (right-side drawer, above overlay) */}
+          <div className="fixed top-0 right-0 bottom-0 z-70 flex h-screen w-[85%] overflow-y-auto sm:w-[75%] md:w-[60%] max-w-none flex-col bg-white shadow-2xl dark:bg-brand-teal-950 lg:hidden">
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
             <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-              <span className="text-sm font-black uppercase tracking-[0.18em] text-brand-teal-900 dark:text-white">
+              <span className="text-sm font-bold uppercase tracking-[0.12em] text-brand-teal-900 dark:text-white">
                 Ads in Motion
               </span>
             </Link>
             <button
               type="button"
               onClick={closeMenu}
-              className="rounded-md p-1 text-sm font-bold uppercase tracking-[0.18em] text-brand-teal-900 hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
+              className="rounded-md p-1 text-sm font-semibold uppercase tracking-[0.12em] text-brand-teal-900 hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
               aria-label="Close navigation menu"
             >
               ✕
@@ -149,7 +160,7 @@ export function SiteHeader() {
                   key={item.label}
                   href={item.href}
                   onClick={closeMenu}
-                  className={`flex items-center justify-between rounded-lg px-3 py-3 text-sm font-extrabold uppercase tracking-[0.18em] ${
+                  className={`flex items-center justify-between rounded-lg px-3 py-3 text-sm font-semibold uppercase tracking-[0.12em] ${
                     isActive
                       ? "bg-brand-teal-900 text-white"
                       : "text-brand-teal-900 hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
@@ -170,7 +181,9 @@ export function SiteHeader() {
               GET ADVERTISING
             </PrimaryButton>
           </div>
-        </div>
+          </div>
+        </>
+      ) : null}
     </header>
   );
 }

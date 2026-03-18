@@ -20,7 +20,7 @@ export function PageHero({ title, subtitle }: Props) {
       </div>
 
       <div className="container relative mx-auto max-w-[1200px] px-6 py-14">
-        <h1 className="font-display text-balance text-[52px] font-black leading-[0.98] text-white md:text-[64px]">
+        <h1 className="font-display text-balance text-[52px] font-bold leading-[0.98] text-white md:text-[64px]">
           {title}
         </h1>
         {subtitle ? (

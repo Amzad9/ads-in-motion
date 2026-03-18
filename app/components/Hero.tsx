@@ -27,8 +27,8 @@ export function Hero() {
             </h1>
             <p className="mt-5 max-w-[520px] text-[18px] leading-7 text-white/85">
               Strategic mobile billboard and digital advertising solutions,
-              delivering your message directly to your target audience. United
-              States wide.
+              delivering your message directly to your target audience.{" "}
+              <span className="whitespace-nowrap">United States</span> wide.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

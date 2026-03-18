@@ -64,7 +64,7 @@ export default function ServicesPage() {
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#d3dbe0] shadow-[0_0_0_1px_rgba(255,255,255,0.04)] sm:text-sm">
               Online Appointments
             </p>
-            <h1 className="font-display mt-5 text-4xl font-black uppercase leading-[0.9] text-[#f6fbfc] drop-shadow-[0_3px_6px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-6xl">
+            <h1 className="font-display mt-5 text-4xl font-bold uppercase leading-[0.9] text-[#f6fbfc] drop-shadow-[0_3px_6px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-6xl">
               Services
               <br />
               And Campaign Consultations
@@ -101,7 +101,7 @@ export default function ServicesPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9ec2cd]">
                 Proposal Support
               </p>
-              <h2 className="font-display mt-3 text-3xl font-black leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
+              <h2 className="font-display mt-3 text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
                 Need a Detailed Scope or Proposal?
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-7 text-[#c9d4da] sm:text-lg sm:leading-8">

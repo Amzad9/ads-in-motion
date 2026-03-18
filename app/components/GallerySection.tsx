@@ -73,7 +73,7 @@ export default function GallerySection({
       >
         {showHeader ? (
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-3xl font-black leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-bold leading-[0.95] text-[#f0f7f8] sm:text-4xl lg:text-5xl">
               Visual Portfolio
             </h2>
             <p className="mt-4 text-base leading-7 text-[#c9d4da] sm:text-lg sm:leading-8">
